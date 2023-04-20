@@ -2,7 +2,7 @@
 <html> 
 
 <head> 
-
+                                                 //Faz a convercao de temperaturas de °F PARA °C
     <script> 
         function Converter(){ 
             var T = parseFloat(document.getElementById("temp").value);           
