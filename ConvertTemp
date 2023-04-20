@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+
+    <script> 
+        function Converter(){ 
+            var T = parseFloat(document.getElementById("temp").value);           
+            var X = "A temperatura é equivalente a ";           
+            X = X + (T- 32)/1.8; 
+            X = X + "°C"; 
+            document.getElementById("res").innerHTML = X;                                
+        }
+    </script> 
+
+</head> 
+                                            
+<body text = "blue"> 
+    <h1>Conversão de Temperaturas...</h1> 
+    <p>Informe a Temperatura °F: </p> 
+    <input type = "text" id = "temp"><br><br>     
+    <button type = "button" onclick="Converter()" >Converter</button> 
+    <p id = "res"> </p> 
+</body> 
+
+</html> 
