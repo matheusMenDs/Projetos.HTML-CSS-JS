@@ -1,9 +1,9 @@
 !DOCTYPE html> 
 <html> 
 <head> 
-    <script> 
+    <script>                                               
         function Soma(){ 
-            var e1 = parseInt(document.getElementById("V1").value);                      
+            var e1 = parseInt(document.getElementById("V1").value);         //FAZ A SOMA DE DOIS NUMEROS INTEIROS                   
             var e2 = parseInt(document.getElementById("V2").value);                    
             var X = "Resposta: " 
             X = X + "<font color = red> <b>";     
