@@ -3,16 +3,15 @@
 <head> 
     <script> 
         function Soma(){ 
-            var e1 = parseInt(document.getElementById("V1").value);                      //trocando para parseFloat = para fazer 
-            var e2 = parseInt(document.getElementById("V2").value);                     //com números inteiros 
+            var e1 = parseInt(document.getElementById("V1").value);                      
+            var e2 = parseInt(document.getElementById("V2").value);                    
             var X = "Resposta: " 
-            X = X + "<font color = red> <b>";    //<b> = colocar em negrito   
+            X = X + "<font color = red> <b>";     
             X = X + (e1 + e2); 
             X = X + "</b</font>"; 
             document.getElementById("res").innerHTML = X; 
-            document.getElementById("str").innerHTML = "Resposta é: " + (e1 + e2);      //para corrigir as info na barra text 
-            "Resposta: " + (e1 + e2); 
-            //criando uma área de texto em baixo 
+            document.getElementById("str").innerHTML = "Resposta é: " + (e1 + e2);       
+            "Resposta: " + (e1 + e2);  
         } 
     
     </script> 
