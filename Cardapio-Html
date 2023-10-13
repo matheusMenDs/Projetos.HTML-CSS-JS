@@ -1,0 +1,145 @@
+Indeex.html ---> Arquivo do código em HTML
+Styles.css  ---> Arquivo do código em CSS
+
+--------------------| HTML |--------------------
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cardápio Escolar</title>
+</head>
+<body>
+    <header>
+        <h1>Cardápio Semanal</h1>
+        <h2>DATA: DE 09/10 A 13/10</h2>
+    </header>
+    
+    <main>
+        <section id="menu">
+            <h2><i><u>Opções de Almoço</u></i></h2>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <h3><u>SEGUNDA-FEIRA:</u><br><br> Macarrão com Molho de Tomate</h3>
+                    <img src="1macarrao.jpg" alt="">
+                    <h5>INGREDIENTES:<br><br>-Macarrão<br>-Molho de Tomate<br>-Cebolinha</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>SEGUNDA-FEIRA (VEG):</u><br><br> Macarrão Vegano sem leite</h3>
+                    <img src="2macarrasveg.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Macarrão<br>-Verduras<br>-Azeite</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>TERÇA-FEIRA:</u><br><br> Frango Grelhado com Arroz e Salada</h3>
+                    <img src="3frangog.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Peito de Frango Grelhado<br>-Arroz<br>-Salada<br>-Molho</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>TERÇA-FEIRA (VEG):</u><br><br> Cogumelos com Arroz</h3>
+                    <img src="4cogucomarroz.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Cogumelos<br>-Arroz<br>-Molho</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>QUARTA-FEIRA:</u><br><br> Feijoada Completa</h3>
+                    <img src="5feijuca.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Feijoada<br>-Couve<br>-Farofa<br>-Laranja</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>QUARTA-FEIRA (VEG):</u><br><br> Salada e Batata Doce</h3>
+                    <img src="6saladbatatadoce.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Salada<br>-Batata Doce<br>-Molho<br>-Azeite</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>QUINTA-FEIRA:</u><br><br> Peixe Assado com Legumes</h3>
+                    <img src="7peixelegumes.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Peixe Assado<br>-Legumes<br>-Molho<br>-Azeite</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>QUINTA-FEIRA (VEG):</u><br><br> Legumes no vapor e arroz</h3>
+                    <img src="8legumesvapor.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Legumes no vapor<br>-Arroz<br>-Azeite<br>-Molho</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>SEXTA-FEIRA:</u><br><br> Hambúrguer e Batatas Fritas</h3>
+                    <img src="9hamburgue.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Pão<br>-Hamburguer 180g<br>-Salada<br>-Bacon<br>-Queijo<br>-Molho<br>-Batata Frita</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>SEXTA-FEIRA (VEG):</u><br><br> Hambúrguer de Cogumelos e salada</h3>
+                    <img src="hamburguercogu.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Pão<br>-Cogumelos<br>-Salada </h5>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
+
+----------------------| FIM DO HTML |------------------
+
+--------------------| CSS |--------------------
+
+/* Estilização básica */
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #094211;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#menu {
+    background-color: #e2e2e2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#menu h2 {
+    background-color: #6ca173;
+    text-align: center;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-item {
+    width: calc(33.33% - 20px); /* Para três colunas com margem entre elas */
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+/* Estilização das imagens */
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilização das opções de almoço */
+.menu-item h3 {
+    text-align: center;
+}
+
+----------------------| FIM DO CSS |------------------
+
