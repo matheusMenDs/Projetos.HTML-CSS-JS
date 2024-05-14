@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<!-- No head(cabeçalho), deve ser incluido o código em JavaScript-->
+
+<head>
+
+    <title>Calculadora de Juros</title>
+
+    <script>
+
+        // Factory: retorna um objeto (coleção de atributos)
+
+        function RecuperarDados() {
+            var C, i, n, tipo;
+            return({
+                C : parseFloat(document.getElementById("_Capital").value),
+                i : parseFloat(document.getElementById("_Taxa").value),
+                n : parseFloat(document.getElementById("_Prazo").value),
+                tipo : document.querySelector("input[name=tipo]:checked").value
+            });
+        }
+
+        function CalcularMontante() {
+
+            var Dados = RecuperarDados();
+            var M;
+            var J;
+
+            if (Dados.tipo == "Composto") {
+                M = Dados.C * (1 + Dados.i) ** Dados.n;
+                J = M - Dados.C;
+            } else {
+                M = Dados.C * (1 + Dados.i * Dados.n);
+                J = M - Dados.C;
+            }
+
+            var str = "O montante da aplicação é de <b><font color = green>R$ " + M.toFixed(2);
+            str = str + "</font></b> e os juros são de <b><font color = red>R$ " + J.toFixed(2);
+            str = str + "</font></b>";
+            str = "<center>" + str + "</center>"
+
+            document.getElementById("Resposta").innerHTML = str;
+
+        }
+
+    </script>
+
+</head>
+
+<!-- No body(corpo), deve ser incluido o código HTML e nome das variáveis para o JavaScript reconhecer-->
+
+<body>
+
+    <h1>Calculadora</h1>
+
+    <p>No sistema de juros simples, o calculo dos juros, em um período, levam em consideração o valor inicial aplicado. Nos juros compostos, o calculo dos juros consideram o valor acumulado no período anterior.</p>
+
+    <table border = "0" align="center" width = "400px">
+
+        <!-- 1ª linha -->
+
+        <tr>
+            <td>Capital</td>
+            <td><input type = "text" id = "_Capital"></td>
+            <td></td>
+        </tr>
+
+        <!-- 2ª linha -->
+
+        <tr>
+            <td>Taxa</td>
+            <td><input type = "text" id = "_Taxa"></td>
+            <td></td>
+        </tr>
+
+        <!-- 3ª linha -->
+
+        <tr>
+            <td>Prazo (meses)</td>
+            <td><input type = "text" id = "_Prazo"></td>
+            <td></td>
+        </tr>
+
+        <!-- 4ª linha -->
+
+        <tr>
+            <td>Tipo</td>
+            <td>
+                <input type = "radio" id = "_Tipo" name = "tipo" value = "Composto">Composto
+                <input type = "radio" id = "_Tipo" name = "tipo" value = "Simples">Simples
+            </td>
+            <td>
+                <button type = "button" onclick="CalcularMontante()">Calcular</button>
+            </td>
+        </tr>
+
+        <!-- 5ª linha : nesta linha será mostrado o resultado dos cálculos-->
+
+        <tr>
+            <td colspan = "3" ><p id = "Resposta">O montante ...</p></td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
