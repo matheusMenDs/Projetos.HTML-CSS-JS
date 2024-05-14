@@ -1,1 +1,29 @@
-
+!DOCTYPE html> 
+<html> 
+<head> 
+    <script>                                               
+        function Soma(){ 
+            var e1 = parseInt(document.getElementById("V1").value);         //FAZ A SOMA DE DOIS NUMEROS INTEIROS                   
+            var e2 = parseInt(document.getElementById("V2").value);                    
+            var X = "Resposta: " 
+            X = X + "<font color = red> <b>";     
+            X = X + (e1 + e2); 
+            X = X + "</b</font>"; 
+            document.getElementById("res").innerHTML = X; 
+            document.getElementById("str").innerHTML = "Resposta é: " + (e1 + e2);       
+            "Resposta: " + (e1 + e2);  
+        } 
+    
+    </script> 
+        
+        </head>                                           
+            <body text = "blue"> 
+               <h1>Somando dois números...</h1> 
+               <p>Digite dois números: </p> 
+               <input type = "text" id = "V1"><br><br> 
+               <input type = "text" id = "V2"><br><br> 
+               <textarea id = "str" rows="4" cols="30"></textarea><br>         
+               <button type = "button" onclick="Soma()" >Somar</button> 
+               <p id = "res"> Resposta: </p> 
+            </body> 
+</html> 
