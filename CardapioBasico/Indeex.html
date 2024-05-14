@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cardápio Básico</title>
+</head>
+<body>
+    <header>
+        <h1><u>Cardápio Básico</u></h1>
+        <h5>Temos opções veganas para todos os dias da semana!</h5>
+        <button class="save-button" style="display: Salvar;">Salvar</button>
+        <button class="cancel-button" style="display:Cancelar;">Cancelar</button>
+        <button class="edit-button" onclick="enableEditMode(0)">Editar</button>
+    </header>
+    
+    <main>
+        <section id="menu">
+            <h2><i><u>Opções de Almoço</u></i></h2>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <h3><u>SEGUNDA-FEIRA:</u><br><br> Macarrão com Molho de Tomate</h3>
+                    <img src="Imagens/1macarrao.jpg" alt="">
+                    <h5>INGREDIENTES:<br><br>-Macarrão<br>-Molho de Tomate<br>-Cebolinha</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>SEGUNDA-FEIRA (VEG):</u><br><br> Macarrão Vegano sem leite</h3>
+                    <img src="Imagens/2macarrasveg.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Macarrão<br>-Verduras<br>-Azeite</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>TERÇA-FEIRA:</u><br><br> Frango Grelhado com Arroz e Salada</h3>
+                    <img src="Imagens/3frangog.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Peito de Frango Grelhado<br>-Arroz<br>-Salada<br>-Molho</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>TERÇA-FEIRA (VEG):</u><br><br> Cogumelos com Arroz</h3>
+                    <img src="Imagens/4cogucomarroz.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Cogumelos<br>-Arroz<br>-Molho</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>QUARTA-FEIRA:</u><br><br> Feijoada Completa</h3>
+                    <img src="Imagens/5feijuca.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Feijoada<br>-Couve<br>-Farofa<br>-Laranja</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>QUARTA-FEIRA (VEG):</u><br><br> Salada e Batata Doce</h3>
+                    <img src="Imagens/6saladbatatadoce.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Salada<br>-Batata Doce<br>-Molho<br>-Azeite</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>QUINTA-FEIRA:</u><br><br> Peixe Assado com Legumes</h3>
+                    <img src="Imagens/7peixelegumes.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Peixe Assado<br>-Legumes<br>-Molho<br>-Azeite</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>QUINTA-FEIRA (VEG):</u><br><br> Legumes no vapor e arroz</h3>
+                    <img src="Imagens/8legumesvapor.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Legumes no vapor<br>-Arroz<br>-Azeite<br>-Molho</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>SEXTA-FEIRA:</u><br><br> Hambúrguer e Batatas Fritas</h3>
+                    <img src="Imagens/9hamburgue.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Pão<br>-Hamburguer 180g<br>-Salada<br>-Bacon<br>-Queijo<br>-Molho<br>-Batata Frita</h5>
+                </li>
+                <li class="menu-item">
+                    <h3><u>SEXTA-FEIRA (VEG):</u><br><br> Hambúrguer de Cogumelos e salada</h3>
+                    <img src="Imagens/hamburguercogu.jfif" alt="">
+                    <h5>INGREDIENTES:<br><br>-Pão<br>-Cogumelos<br>-Salada </h5>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // Função para ativar o modo de edição
+        function enableEditMode(index) {
+            const menuItem = document.querySelectorAll(".menu-item")[index];
+            const name = menuItem.querySelector("h3");
+            const image = menuItem.querySelector("img");
+            const ingredients = menuItem.querySelector("h5");
+    
+            const nameInput = document.createElement("input");
+            nameInput.setAttribute("type", "text");
+            nameInput.value = name.textContent;
+    
+            const imageInput = document.createElement("input");
+            imageInput.setAttribute("type", "file");
+    
+            const ingredientsInput = document.createElement("textarea");
+            ingredientsInput.textContent = ingredients.textContent;
+    
+            menuItem.replaceChild(nameInput, name);
+            menuItem.replaceChild(imageInput, image);
+            menuItem.replaceChild(ingredientsInput, ingredients);
+    
+            const editButton = menuItem.querySelector(".edit-button");
+            editButton.style.display = "none";
+    
+            const saveButton = menuItem.querySelector(".save-button");
+            saveButton.style.display = "block";
+            saveButton.onclick = function () {
+                saveMenuItem(index);
+            };
+    
+            const cancelButton = menuItem.querySelector(".cancel-button");
+            cancelButton.style.display = "block";
+            cancelButton.onclick = function () {
+                cancelEdit(index);
+            };
+        }
+    
+        // Função para salvar as alterações
+        function saveMenuItem(index) {
+            const menuItem = document.querySelectorAll(".menu-item")[index];
+            const nameInput = menuItem.querySelector("input[type='text']");
+            const imageInput = menuItem.querySelector("input[type='file']");
+            const ingredientsInput = menuItem.querySelector("textarea");
+    
+            const name = menuItem.querySelector("h3");
+            const image = menuItem.querySelector("img");
+            const ingredients = menuItem.querySelector("h5");
+    
+            name.textContent = nameInput.value;
+            ingredients.textContent = ingredientsInput.value;
+    
+            if (imageInput.files.length > 0) {
+                const file = imageInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function () {
+                    image.src = reader.result;
+                };
+                reader.readAsDataURL(file);
+            }
+    
+            cancelEdit(index);
+        }
+    
+        // Função para cancelar a edição
+        function cancelEdit(index) {
+            const menuItem = document.querySelectorAll(".menu-item")[index];
+            const nameInput = menuItem.querySelector("input[type='text']");
+            const imageInput = menuItem.querySelector("input[type='file']");
+            const ingredientsInput = menuItem.querySelector("textarea");
+    
+            const name = menuItem.querySelector("h3");
+            const image = menuItem.querySelector("img");
+            const ingredients = menuItem.querySelector("h5");
+    
+            nameInput.value = name.textContent;
+            imageInput.value = "";
+            ingredientsInput.value = ingredients.textContent;
+    
+            menuItem.replaceChild(name, nameInput);
+            menuItem.replaceChild(image, imageInput);
+            menuItem.replaceChild(ingredients, ingredientsInput);
+    
+            const editButton = menuItem.querySelector(".edit-button");
+            editButton.style ;display = "block";
+    
+            const saveButton = menuItem.querySelector(".save-button");
+            saveButton.style.display = "none";
+    
+            const cancelButton = menuItem.querySelector(".cancel-button");
+            cancelButton.style.display = "none";
+        }
+    </script>
+    
+</body>
+</html>

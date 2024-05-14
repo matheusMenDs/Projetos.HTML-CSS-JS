@@ -1,0 +1,59 @@
+/* Estilização básica */
+body {
+    background-color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #094211;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#menu {
+    background-color: #e2e2e2;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#menu h2 {
+    background-color: #6ca173;
+    text-align: center;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-item {
+    width: calc(33.33% - 20px); /* Para três colunas com margem entre elas */
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+/* Estilização das imagens */
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilização das opções de almoço */
+.menu-item h3 {
+    text-align: center;
+}
