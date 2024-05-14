@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Controle de Acesso</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .box a {
+            text-decoration: none;
+            color: black;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .box input[type="text"], .box input[type="password"] {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .box button {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Sistema de Controle de Acesso</h2>
+    <div class="box">
+        <a href="#" onclick="cadastrarUsuario()">Cadastrar Usuário</a>
+        <input type="text" placeholder="Nome completo">
+        <input type="text" placeholder="E-mail">
+        <input type="text" placeholder="Login">
+        <input type="password" placeholder="Senha">
+        <button onclick="cadastrar()">Cadastrar</button>
+    </div>
+    <div class="box">
+        <a href="#" onclick="efetuarLogin()">Efetuar Login</a>
+        <input type="text" placeholder="Login">
+        <input type="password" placeholder="Senha">
+        <button onclick="login()">Login</button>
+    </div>
+    <div class="box">
+        <a href="#" onclick="recuperarSenha()">Recuperar Senha</a>
+        <input type="text" placeholder="Nome completo">
+        <input type="text" placeholder="Login">
+        <button onclick="recuperar()">Recuperar</button>
+    </div>
+    <div class="box">
+        <a href="#" onclick="excluirUsuario()">Excluir Usuário</a>
+        <input type="text" placeholder="Login">
+        <input type="password" placeholder="Senha">
+        <button onclick="excluir()">Excluir</button>
+    </div>
+
+    <h2>Verificação de Login</h2>
+
+    <form action="verificar-login" method="POST">
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <script>
+        
+        var str = "http://localhost:8080/";
+        str = str + "conexaum.js?";
+
+        window.location.href + str;
+
+        function cadastrarUsuario() {
+            alert("Opção: Cadastrar Usuário");
+        }
+
+        function efetuarLogin() {
+            alert("Opção: Efetuar Login");
+        }
+
+        function recuperarSenha() {
+            alert("Opção: Recuperar Senha");
+        }
+
+        function excluirUsuario() {
+            alert("Opção: Excluir Usuário");
+        }
+
+        function cadastrar() {
+            alert("Cadastrando usuário...");
+            // Aqui você pode adicionar o código JavaScript para cadastrar o usuário.
+        }
+
+        function login() {
+            alert("Efetuando login...");
+            // Aqui você pode adicionar o código JavaScript para efetuar o login do usuário.
+        }
+
+        function recuperar() {
+            alert("Recuperando senha...");
+            // Aqui você pode adicionar o código JavaScript para recuperar a senha do usuário.
+        }
+
+        function excluir() {
+            alert("Excluindo usuário...");
+            // Aqui você pode adicionar o código JavaScript para excluir o usuário.
+        }
+
+    </script>
+</body>
+</html>
