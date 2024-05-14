@@ -1,0 +1,1 @@
+O programa mostra todos os 26 Estados e um Distrito do Brasil, onde é pedido que o usuário selecione todos os estados que ele já foi ou deseja ir, e logo em seguida possui um botão que irá gerar a lista que foi selecionada pelo usuário pela órdem e informando suas siglas também. 
