@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang=”em”>
+<head> 
+    <meta charset=”UTF-8”>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+    <title>Sistema de Orçamentação</title>
+  
+</head>
+<body>
+  <h1> BEM-VINDOS A TECH SHOES</h1>
+
+
+    <form id = “myForm”>
+        <label for=”nome”>Nome:</label>
+        <input id=”nome” type=”text” name=”nome”><br><br>
+        <label for=”email”>E-mail:</label>
+        <input id=”email” type=”email” name=”email”><br><br>
+        
+    </form>
+
+    <table>
+      <tr>
+        <th> Crocs</th>
+        <th>Chinelo NIKE </th>
+        <th>Tênis Air Jordan</th>
+        <th>Tênis NIKE</th>
+        <th>Salto Alto</th>
+      </tr>
+      <tr>
+        
+        <th><img src= https://i.ibb.co/x7M0VgK/pngegg-7.png alt=”P1” width=”150” height=”160”></th>
+        <th><img src= https://i.ibb.co/ZXkj05x/pngegg-5.png alt=”P2” width=”150” height=”150”></th>
+        <th><img src= https://i.ibb.co/Z25psBC/pngegg-4.png alt=”P3” width=”180” height=”120”></th>
+        <th><img src= https://i.ibb.co/gmgCMSM/pngegg-2.png alt=”P4” width=”190” height=”120”></th>
+        <th><img src= https://i.ibb.co/7kWrt3q/pngegg-6.png alt=”P5” width=”170” height=”170”></th>
+    </th>
+      </tr>
+      <tr>
+        <td id=”precoP1”> R$ 219</td>     
+        <td id=”precoP2”> R$ 150</td>
+        <td id=”precoP3”> R$ 300</td>
+        <td id=”precoP4”> R$ 520</td>
+        <td id=”precoP5”> R$ 920</td>
+      </tr>
+
+      <td><h4>Quantidade</h4> </td>
+      <td><h4>Quantidade</h4> </td>
+      <td><h4>Quantidade</h4> </td>
+      <td><h4>Quantidade</h4> </td>
+      <td><h4>Quantidade</h4> </td>
+
+      <tr>
+        <td><input type=”number” id=”quantidadeP1” name=”quantidadeP1” value=”0” onchange=”calcularTotal()”></td>
+        <td><input type=”number” id=”quantidadeP2” name=”quantidadeP2” value=”0” onchange=”calcularTotal()”></td>
+        <td><input type=”number” id=”quantidadeP3” name=”quantidadeP3” value=”0” onchange=”calcularTotal()”></td>
+        <td><input type=”number” id=”quantidadeP4” name=”quantidadeP4” value=”0” onchange=”calcularTotal()”></td>
+        <td><input type=”number” id=”quantidadeP5” name=”quantidadeP5” value=”0” onchange=”calcularTotal()”></td>
+        
+      </tr>
+      <tr>
+        <td id=”valorP1”></td>
+        <td id=”valorP2”></td>
+        <td id=”valorP3”></td>
+        <td id=”valorP4”></td>
+        <td id=”valorP5”></td>
+      </tr>
+      
+    </table>  
+    <button onclick=”somarTotal()”>Calcular Valor</button><br /><br/>
+    <button onclick=”somar()”>Calcular Quantidade </button>
+    <br /><br/>
+    <h3>O valor da compra é: </h3> <span></span>
+  
+  <script>
+
+Var quantidadeP1 = document.querySelector(‘#quantidadeP1’)
+Var quantidadeP2 = document.querySelector(‘#quantidadeP2’)
+Var quantidadeP3 = document.querySelector(‘#quantidadeP3’)
+Var quantidadeP4 = document.querySelector(‘#quantidadeP4’)
+Var quantidadeP5 = document.querySelector(‘#quantidadeP5’)
+Var resultado = document.querySelector(‘span’)
+
+Var id = document.querySelector(‘#precoP1’)
+Var id = document.querySelector(‘#precoP2’)
+Var id = document.querySelector(‘#precoP3’)
+Var id = document.querySelector(‘#precoP4’)
+Var id = document.querySelector(‘#precoP5’)
+Var resultado = document.querySelector(‘span’)
+
+Function somarTotal(){
+
+  Document.getElementById(‘valor’).innerHTML = parseFloat(document.getElementById(‘valor’).value).toLocaleString (‘pt-br’, {minimumfractionDigits: 3});
+}
+Function somar(){
+  Resultado.innerHTML = parseInt(quantidadeP1.value) + parseInt(quantidadeP2.value) + parseInt(quantidadeP3.value) 
+  + parseInt(quantidadeP4.value) + parseInt(quantidadeP5.value) 
+}
+
+Document.getElementById(“myForm”).addEventListener(“submit”, function(event){
+Event.preventDefault();
+Var Nome = document.getElementById(“nome”).value;
+Var Email = document.getElementById(“email”).value;
+
+Var str = http://localhost:8080/?; 
+Str = str + “nome=” + Nome;
+Str = str + “&” + “email” + Email;
+Window.location.href = str; 
+});
+</script>
+</body>
+</html>
