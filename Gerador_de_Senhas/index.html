@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas Seguras</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🔒 Gerador de Senhas Seguras</h1>
+      <p>Crie senhas fortes e seguras em segundos!</p>
+    </header>
+
+    <div class="settings">
+      <div class="setting-group">
+        <label for="length">Comprimento da senha:</label>
+        <input type="number" id="length" min="4" max="32" value="12">
+      </div>
+
+      <div class="setting-group">
+        <label for="include-symbols">
+          <input type="checkbox" id="include-symbols" checked>
+          Incluir símbolos (!, @, #, etc.)
+        </label>
+      </div>
+    </div>
+
+    <button id="generate-btn" class="btn-primary">Gerar Senha</button>
+
+    <div class="output">
+      <input type="text" id="password-output" readonly placeholder="Sua senha aparecerá aqui">
+      <button id="copy-btn" class="btn-secondary">Copiar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
